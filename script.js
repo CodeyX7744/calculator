@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 let num1 = null;
@@ -32,6 +33,9 @@ function operate(operator, num1, num2) {
             return divide(num1,num2);
     }
 }
+=======
+// Model-------------------------------------------------------------------------------------------
+>>>>>>> b72edcfb9ebb57d2cdf1135214306bfbd7ed2c60
 
 
 
@@ -50,6 +54,10 @@ function operate(operator, num1, num2) {
 
 
 
+<<<<<<< HEAD
+=======
+//View-------------------------------------------------------------------------------------------
+>>>>>>> b72edcfb9ebb57d2cdf1135214306bfbd7ed2c60
 
 
 
@@ -69,6 +77,7 @@ function operate(operator, num1, num2) {
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -121,3 +130,6 @@ function operate(operator, num1, num2) {
 
 
 
+=======
+// Controller-------------------------------------------------------------------------------------------
+>>>>>>> b72edcfb9ebb57d2cdf1135214306bfbd7ed2c60

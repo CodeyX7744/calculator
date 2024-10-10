@@ -46,6 +46,10 @@ text-align: end;
     font-size: 2rem;
     flex-basis: 115px;
 }
+.btn:hover {
+    cursor: pointer;
+    border: 2px solid black;
+}
 #btnZero {
    align-self: end;
 }

@@ -54,10 +54,13 @@ function getOperator(inputValue) {
 
 function displayResult() {
     if (operator && num1 && num2) {
-        input.value = operate(operator, num1, num2);
+        input.value = Math.round((operate(operator, num1, num2))*10000000000000)/10000000000000;
         num1 = input.value;
         reset();
     } else input.value = num1;
+    if (input.value === 'Infinity') {
+        input.value = "You are a muggle :)"
+    }
 }
 
 function getBtn(e) {

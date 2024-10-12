@@ -22,6 +22,10 @@ function divide(num1,num2) {
     return Number(num1) / Number(num2);
 }
 
+function modulo(num1,num2) {
+    return Number(num1) % Number(num2);
+}
+
 function operate(operator, num1, num2) {
     switch (operator) {
         case "+":
@@ -32,6 +36,8 @@ function operate(operator, num1, num2) {
             return multiply(num1,num2);
         case "/":
             return divide(num1,num2);
+        case "%":
+            return modulo(num1,num2);
     }
 }
 
@@ -49,6 +55,10 @@ function getOperator(inputValue) {
         case "/":
             operator = "/";
             break;
+        case "%":
+            operator = "%";
+            break;
+            
     }
 }
 
@@ -59,7 +69,7 @@ function displayResult() {
         reset();
     } else input.value = num1;
     if (input.value === 'Infinity') {
-        input.value = "You are a muggle :)"
+        input.value = "You are  not dumb :)"
     }
 }
 
@@ -71,18 +81,38 @@ function getBtn(e) {
     } else if (e.target.innerText === "C") {
         input.value = "";
         num1 = "";
+        reset();
     }
 }
 
 function getInput(inputValue) {
-    if ((!isNaN(Number(inputValue))) && !operator) {
+    if(inputValue === "." && !operator ) {
+        console.log("level1");
+        if (input.value === "") {
+            num1 += "0" + inputValue;
+            displayInput(num1);
+        } else if(!(input.value.indexOf(".")>-1)) {
+            console.log("level2");
+            num1 += inputValue;
+            displayInput(num1);
+        }
+    } else if(inputValue === "." && operator) {
+        console.log("level3");
+        if(num2 === "") {
+            num2 += "0" + inputValue;
+            displayInput(num2);
+        } else if(!(num2.indexOf(".")>-1)) {
+            console.log("level4");
+            num2 += inputValue;
+            displayInput(num2);
+        }
+    } else if ((!isNaN(Number(inputValue))) && !operator) {
         num1 += inputValue;
         displayInput(num1);
     } else if((!isNaN(Number(inputValue))) && operator) {
-        input.value = "";
         num2 += inputValue;
-        displayInput(num2);
-    }
+        displayInput(num2); 
+    } 
 }
   
 function displayInput(inputValue){
